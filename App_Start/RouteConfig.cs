@@ -16,7 +16,7 @@ namespace Gym_Management_Website
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Gym", action = "GymHome", id = UrlParameter.Optional }
+                defaults: new { controller = "GymProducts", action = "ReadOnlyIndex", id = UrlParameter.Optional }
             );
         }
     }

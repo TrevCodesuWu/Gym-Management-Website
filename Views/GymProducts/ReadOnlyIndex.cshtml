@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Gym_Management_Website.Models.GymProducts>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <div>@item.prod_name</div>
+            <div>@item.prod_price</div>
+            <button class="btn info "><a href="@Url.Action("AddToCart","Cart", new { @id = item.id})">Add To Cart</a></button>
+        </div>
+
+    }
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

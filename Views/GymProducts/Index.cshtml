@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Gym_Management_Website.Models.GymProducts>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.prod_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prod_price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prod_qty)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prod_qty)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
