@@ -86,3 +86,5 @@ C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Manag
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.initialmigration.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.GenerateResource.cache
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.gymproducts.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.memberclass.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.userprofilefieldsadded.resources

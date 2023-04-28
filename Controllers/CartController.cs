@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Gym_Management_Website.Models; 
+using Gym_Management_Website.Models;
+using Gym_Management_Website.ViewModels; 
 
 namespace Gym_Management_Website.Controllers
 {
@@ -81,5 +82,52 @@ namespace Gym_Management_Website.Controllers
 
             return RedirectToAction("Index"); 
         }
+
+        [Authorize]
+        public ActionResult confirmCheckout(double totalAmount)
+        {
+            var memberfromdb = context.Members.Where(c => c.Email == User.Identity.Name).SingleOrDefault();
+            if(memberfromdb == null)
+            {
+                return HttpNotFound(); 
+            }
+            var vm = new MemberAndTotalViewModel
+            {
+                totalVm = totalAmount,
+                memberVm = memberfromdb
+            };
+            return View(vm); //returns a view model of total and a member from the db to show the user information and their total . next step is payment(paypal probably) 
+        }
+
+        public ActionResult numItemsCart() //This is for the counter of items the user puts in their cart , this is displayed at the home page.
+        {
+           
+            List<Item> cart = (List<Item>)Session["cart"];
+            var counter = 0;
+            foreach( var vari in cart)
+            {
+                var calc = vari.Quantity;
+
+                counter = counter + calc;
+            }
+
+            return Content("("+counter+")"); 
+        }
+        /*Checkout
+        public ActionResult Checkout(decimal totalAmount)
+        {
+            double OrderTotal = Convert.ToDouble(totalAmount);
+            string LoggedUserId = User.Identity.GetUserId();
+            Member member = _db.Members.Where(m => m.UserId == LoggedUserId).FirstOrDefault();
+            if (member != null)
+            {
+                ViewBag.Name = member.FullName;
+                ViewBag.Phone = member.PhoneNo;
+                ViewBag.Address = member.Address;
+                ViewBag.Email = member.Email;
+                ViewBag.Total = OrderTotal;
+            }
+            return View();
+        } */
     }
 }

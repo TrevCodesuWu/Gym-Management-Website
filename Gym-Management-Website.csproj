@@ -172,6 +172,7 @@
     <Compile Include="Controllers\GymProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -183,14 +184,24 @@
     <Compile Include="Migrations\202304141925432_gymproducts.Designer.cs">
       <DependentUpon>202304141925432_gymproducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304240816525_memberclass.cs" />
+    <Compile Include="Migrations\202304240816525_memberclass.Designer.cs">
+      <DependentUpon>202304240816525_memberclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304240820425_userprofilefieldsadded.cs" />
+    <Compile Include="Migrations\202304240820425_userprofilefieldsadded.Designer.cs">
+      <DependentUpon>202304240820425_userprofilefieldsadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GymProducts.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\MemberAndTotalViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -257,6 +268,8 @@
     <Content Include="Views\GymProducts\Index.cshtml" />
     <Content Include="Views\GymProducts\ReadOnlyIndex.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Cart\confirmCheckout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304141925432_gymproducts.resx">
       <DependentUpon>202304141925432_gymproducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304240816525_memberclass.resx">
+      <DependentUpon>202304240816525_memberclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304240820425_userprofilefieldsadded.resx">
+      <DependentUpon>202304240820425_userprofilefieldsadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Gym_Management_Website.Models.Member>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered"> 
+    <thead>
+        <tr>
+            <th>Users</th>
+            <th>Library ID</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.FullName</td>
+                    <td>@item.LibraryId</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+    </tbody>
+</table>

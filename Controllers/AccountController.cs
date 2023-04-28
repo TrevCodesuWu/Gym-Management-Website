@@ -149,12 +149,38 @@ namespace Gym_Management_Website.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            ApplicationDbContext _context = new ApplicationDbContext(); 
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var guid = Guid.NewGuid().ToString();
+                var LibraryIdentity = guid.Substring(0, 6);
+
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    Name = model.Name,
+                    Address = model.Address,
+                    PhoneNo = model.PhoneNo,
+                    LibraryId = LibraryIdentity
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    Member member = new Member()
+                    {
+                        UserId = user.Id,
+                        Email = model.Email,
+                        FullName = model.Name,
+                        PhoneNo = model.PhoneNo,
+                        Address = model.Address,
+                        LibraryId = LibraryIdentity
+                    };
+
+                    _context.Members.Add(member);
+                    _context.SaveChanges();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

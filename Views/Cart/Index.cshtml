@@ -23,24 +23,27 @@
                 <td style="background-color:limegreen;">@item.Quantity</td>
                 <td>@(item.Quantity * item.Products.prod_price)</td>
                 <td>
-                    <a style="padding:5px 15px; background-color:red; border-radius:5px;" href="@Url.Action("RemoveFromCart", "Cart", new { @id = item.Products.id })">Remove</a>
+                    <a style="padding:5px 15px; border-radius:5px;" href="@Url.Action("RemoveFromCart", "Cart", new { @id = item.Products.id })"><i class="fa-solid fa-minus"></i></a>
                 </td>
             </tr>
         }
         <tr>
             <td colspan="3"><h3 style="text-align:center">Total amount : </h3></td>
-            <td colspan="2">
+            <td colspan="1">
                 @{
                     List<Item> cart = (List<Item>)Session["cart"];
                     var totalamt = 0.00;
-                    foreach(var item in cart)
+                    foreach (var item in cart)
                     {
                         var total = item.Products.prod_price * item.Quantity;
                         totalamt = totalamt + total;
                     }
-                 }
-                <h3>@totalamt</h3>
+                }
+                <h3>R @totalamt</h3>
+
             </td>
+            <td><a class="btn btn-success" href="@Url.Action("confirmCheckout", "Cart", new {totalAmount = totalamt })">Checkout</a></td>
+
         </tr>
     </tbody>
 </table>

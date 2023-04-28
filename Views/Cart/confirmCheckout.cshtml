@@ -1,0 +1,42 @@
+﻿@model Gym_Management_Website.ViewModels.MemberAndTotalViewModel
+@{
+    ViewBag.Title = "confirmCheckout";
+}
+
+<h2>confirmCheckout</h2>
+
+<h2>total needed to be paid : </h2>
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Library Id</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.memberVm.FullName
+            </td>
+            <td>
+                @Model.memberVm.Email
+            </td>
+            <td>
+                @Model.memberVm.LibraryId
+            </td>
+            <td>
+                @Model.memberVm.PhoneNo
+            </td>
+            <td>
+                @Model.memberVm.Address
+            </td>
+            <td>@Model.totalVm</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-success">Purchase</button>
