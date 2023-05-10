@@ -168,11 +168,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\GymProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,6 +195,14 @@
     <Compile Include="Migrations\202304240820425_userprofilefieldsadded.Designer.cs">
       <DependentUpon>202304240820425_userprofilefieldsadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305100726247_orderdb.cs" />
+    <Compile Include="Migrations\202305100726247_orderdb.Designer.cs">
+      <DependentUpon>202305100726247_orderdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305100747554_userEmail.cs" />
+    <Compile Include="Migrations\202305100747554_userEmail.Designer.cs">
+      <DependentUpon>202305100747554_userEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GymProducts.cs" />
@@ -199,16 +210,24 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\GymProductsListAndCartCountViewModel.cs" />
     <Compile Include="ViewModels\MemberAndTotalViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\icons\tabler-icons\fonts\tabler-icons.svg" />
+    <Content Include="Content\assets\css\icons\tabler-icons\tabler-icons.css" />
+    <Content Include="Content\assets\css\styles.css" />
+    <Content Include="Content\assets\css\styles.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\bizinsider.png" />
+    <Content Include="Content\Images\user-1.jpg" />
     <Content Include="Content\Structure.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -216,6 +235,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\assets\css\icons\tabler-icons\fonts\tabler-icons.eot" />
+    <Content Include="Content\assets\css\icons\tabler-icons\fonts\tabler-icons.ttf" />
+    <Content Include="Content\assets\css\icons\tabler-icons\fonts\tabler-icons.woff" />
+    <Content Include="Content\assets\css\icons\tabler-icons\fonts\tabler-icons.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -266,10 +289,18 @@
     <Content Include="Views\GymProducts\Details.cshtml" />
     <Content Include="Views\GymProducts\Edit.cshtml" />
     <Content Include="Views\GymProducts\Index.cshtml" />
-    <Content Include="Views\GymProducts\ReadOnlyIndex.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Cart\confirmCheckout.cshtml" />
+    <Content Include="Views\GymProducts\ReadOnlyIndex.cshtml" />
+    <Content Include="Views\Messages\PaymentSuccess.cshtml" />
+    <Content Include="Views\Messages\PaymentCanceled.cshtml" />
+    <Content Include="Views\Shared\_AdminDashboard.cshtml" />
+    <Content Include="Views\Admin\AdminDashboard.cshtml" />
+    <Content Include="Views\Shared\_AdminLoginPartial.cshtml" />
+    <Content Include="Views\Shared\_DriverDashboard.cshtml" />
+    <Content Include="Views\Admin\DriverDashboard.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +330,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304240820425_userprofilefieldsadded.resx">
       <DependentUpon>202304240820425_userprofilefieldsadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305100726247_orderdb.resx">
+      <DependentUpon>202305100726247_orderdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305100747554_userEmail.resx">
+      <DependentUpon>202305100747554_userEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -27,6 +27,8 @@ namespace Gym_Management_Website.Models
         public DbSet<Member> Members { get; set; }
 
         public DbSet<GymProducts> gymProductsDatabase { get; set; }
+       
+        public DbSet<Order> Orderdb { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

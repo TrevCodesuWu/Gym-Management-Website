@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Gym_Management_Website.Models.Order>
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    * {
+        font-family: Dubai;
+    }
+</style>
+
+<h2>Orders</h2>
+
+<table class="table table-bordered table-condensed table-responsive">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Date Ordered</th>
+            <th>Order Details</th>
+            <th>Total</th>
+            <th>Tracking Number</th>
+            <th>Order Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.timeOrder.ToShortDateString()</td>
+            <td>@item.NameandQuant</td>
+            <td style="background-color:skyblue;">@item.total</td>
+            <td>@item.tracking_num</td>
+
+            @if (item.deliverystatus == "Pending")
+            {
+                <td style="color:orangered;">@item.deliverystatus</td>
+            }
+            else if (item.deliverystatus == "Arriving")
+            {
+                <td style="color:lightblue;">@item.deliverystatus</td>
+
+            }
+            else if (item.deliverystatus == "Completed")
+            {
+                <td style="color:green;">@item.deliverystatus</td>
+
+            }
+            else
+            {
+                <td style="color:red;">@item.deliverystatus</td>
+
+            }
+
+        </tr>
+        }
+    </tbody>
+</table>

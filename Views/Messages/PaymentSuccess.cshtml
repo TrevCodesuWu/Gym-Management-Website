@@ -1,0 +1,40 @@
+﻿@using Gym_Management_Website.Models
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payment Success</title>
+    <style>
+        .underline {
+            width: 100px;
+            text-decoration: none;
+            text-transform: none;
+            padding: 5px 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:100%;height:50vh;font-size:40px;display:flex;justify-content:center;align-items:center;">
+        Payment has successfully completed
+        <br />
+        Tracking Number :  @ViewBag.Trak
+    </div>
+    <div class="underline">
+        <a href="/Order/Index" style="padding:5px 15px; border-radius:5px; background-color:lightblue;">My Orders</a>
+    </div>
+    @{
+        List<Item> cart = (List<Item>)Session["cart"];
+        cart.Clear();
+
+    }
+</body>
+</html>

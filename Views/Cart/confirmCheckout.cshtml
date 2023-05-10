@@ -11,32 +11,58 @@
     <thead>
         <tr>
             <th>Full Name</th>
+            <th>@Model.memberVm.FullName</th>
+        </tr>
+        <tr>
             <th>Email</th>
+            <th>@Model.memberVm.Email</th>
+        </tr>
+        <tr>
             <th>Library Id</th>
+            <th>@Model.memberVm.LibraryId</th>
+        </tr>
+        <tr>
             <th>Phone</th>
+            <th>@Model.memberVm.PhoneNo</th>
+        </tr>
+        <tr>
             <th>Address</th>
-            <th>Total Amount</th>
+            <th>@Model.memberVm.Address</th>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th>@Model.totalVm</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                @Model.memberVm.FullName
-            </td>
-            <td>
-                @Model.memberVm.Email
-            </td>
-            <td>
-                @Model.memberVm.LibraryId
-            </td>
-            <td>
-                @Model.memberVm.PhoneNo
-            </td>
-            <td>
-                @Model.memberVm.Address
-            </td>
-            <td>@Model.totalVm</td>
-        </tr>
     </tbody>
 </table>
-<button class="btn btn-success">Purchase</button>
+<form action="https://sandbox.payfast.co.za/eng/process" method="post">
+    <input type="hidden" name="merchant_id" value="10029388" />
+    <input type="hidden" name="merchant_key" value="bvuhhdzq7sjle" />
+
+    <input type="hidden"
+           name="return_url"
+           value="https://localhost:44399/Messages/PaymentSuccess" />
+    <input type="hidden"
+           name="cancel_url"
+           value="https://localhost:44399/Messages/PaymentCanceled" />
+
+    <input type="hidden" name="amount" value="@Model.totalVm" />
+    <input type="hidden" name="payment_method" value="cc" />
+    <input type="hidden" name="item_name" id="orderNo" value="@Model.memberVm.LibraryId" />
+
+    <button type="submit"  class="btn btn-success mt-2">
+        Pay amount
+        <i class="fa fa-dollar"></i>
+    </button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $("#purchasebtn").click(function () {
+            alert("done"); 
+        });
+       
+    });
+</script>

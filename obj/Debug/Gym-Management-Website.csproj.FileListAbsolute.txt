@@ -78,7 +78,6 @@ C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\bin\Microsoft.Owin.
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.AssemblyReference.cache
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.CoreCompileInputs.cache
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.CopyComplete
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.dll
@@ -88,3 +87,6 @@ C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Manag
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.gymproducts.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.memberclass.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.userprofilefieldsadded.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.AssemblyReference.cache
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.orderdb.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.userEmail.resources

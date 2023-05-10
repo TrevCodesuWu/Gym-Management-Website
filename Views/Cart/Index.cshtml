@@ -23,7 +23,7 @@
                 <td style="background-color:limegreen;">@item.Quantity</td>
                 <td>@(item.Quantity * item.Products.prod_price)</td>
                 <td>
-                    <a style="padding:5px 15px; border-radius:5px;" href="@Url.Action("RemoveFromCart", "Cart", new { @id = item.Products.id })"><i class="fa-solid fa-minus"></i></a>
+                    <button class="btn btn-danger" onclick="RemoveFCart(@item.Products.id)"><a href="@Url.Action("RemoveFromCart", "Cart", new { @id = item.Products.id })"></a></button>
                 </td>
             </tr>
         }
@@ -41,10 +41,52 @@
                 }
                 <h3>R @totalamt</h3>
 
-            </td>
+            </td> @*Add the if statement here after trying the delete button verification thing ...*@
             <td><a class="btn btn-success" href="@Url.Action("confirmCheckout", "Cart", new {totalAmount = totalamt })">Checkout</a></td>
 
         </tr>
     </tbody>
 </table>
+<div>
+    @Html.ActionLink("Back to Store", "ReadOnlyIndex", "GymProducts")
 
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    //Reload Page
+    function reloadPage() {
+        location.reload()
+    }
+    //Add Movie To Cart
+    function RemoveFCart(id) {
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("RemoveFromCart", "Cart")",
+                data: {
+                    id: id
+                },
+                dataType: "json",
+                success: function (res) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: "Item has been removed",
+                        icon: 'success',
+                        allowOutsideClick: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'Okay'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.replace("/Cart/Index")
+                            reloadPage();
+                        } else {
+                            reloadPage();
+                        }
+                    })
+
+                }
+            })
+    }
+</script>

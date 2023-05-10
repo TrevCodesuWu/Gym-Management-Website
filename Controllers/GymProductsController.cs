@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Gym_Management_Website.ViewModels; 
 using Gym_Management_Website.Models;
 
 namespace Gym_Management_Website.Controllers
@@ -24,7 +25,28 @@ namespace Gym_Management_Website.Controllers
         {
             var list = db.gymProductsDatabase.ToList();
 
-            return View("ReadOnlyIndex",list ); 
+            List<Item> cart = (List<Item>)Session["cart"];
+            var counter = 0;
+            if(cart == null)
+            {
+                counter = 0; 
+            }
+            else
+            {
+                foreach (var vari in cart)
+                {
+                    var calc = vari.Quantity;
+
+                    counter = counter + calc;
+                }
+            }
+            
+            var vm = new GymProductsListAndCartCountViewModel
+            {
+                gymprodvm = list,
+                countvm = counter
+            };
+            return View("ReadOnlyIndex", vm); 
         }
         // GET: GymProducts/Details/5
         public ActionResult Details(int? id)
@@ -119,6 +141,21 @@ namespace Gym_Management_Website.Controllers
             db.gymProductsDatabase.Remove(gymProducts);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult numItemsCart() //This is for the counter of items the user puts in their cart , this is displayed at the home page.
+        {
+
+            List<Item> cart = (List<Item>)Session["cart"];
+            var counter = 0;
+            foreach (var vari in cart)
+            {
+                var calc = vari.Quantity;
+
+                counter = counter + calc;
+            }
+
+            return Content("(" + counter + ")");
         }
 
         protected override void Dispose(bool disposing)

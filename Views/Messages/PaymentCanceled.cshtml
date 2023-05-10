@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payment Canceled</title>
+    <style>
+        .underline {
+            text-decoration: none;
+            text-transform: none;
+            padding: 5px 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+            background-color: silver;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100%; height: 90vh; font-size: 40px; display: flex; justify-content: center; align-items: center;">
+        Something went wrong , try again ...
+    </div>
+    <div class="underline">
+        @Html.ActionLink("Back to store", "ReadOnlyIndex", "GymProducts")
+
+    </div>
+
+</body>
+</html>

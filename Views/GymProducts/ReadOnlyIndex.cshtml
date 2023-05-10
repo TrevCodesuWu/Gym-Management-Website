@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Gym_Management_Website.Models.GymProducts>
-
+﻿@model Gym_Management_Website.ViewModels.GymProductsListAndCartCountViewModel
 @{
     Layout = null;
 }
@@ -9,23 +8,98 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>ReadOnlyIndexx</title>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
+    <div>
+        @Model.countvm
+    </div>
+    <div>
+        @foreach (var item in Model.gymprodvm)
+        {
+            <div class="form-group">
+                <div>@item.prod_name</div>
+                <div>@item.prod_price</div>
+                <button class="btn" onclick="addToCart(@item.id)">Add to cart</button>
 
-    @foreach (var item in Model)
-    {
-        <div>
-            <div>@item.prod_name</div>
-            <div>@item.prod_price</div>
-            <button class="btn info "><a href="@Url.Action("AddToCart","Cart", new { @id = item.id})">Add To Cart</a></button>
-        </div>
+            </div>
 
+
+            /*
+            <div class="form-group">
+                <div>@item.prod_name</div>
+                <div>@item.prod_price</div>
+                <button class="btn" id="addbtn"><a href="@Url.Action("AddToCart","Cart", new { @id = item.id})">Add To Cart</a></button>
+
+            </div>
+            */
+        }
+
+    </div>
+
+    <!--Custom Script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    //Reload Page
+    function reloadPage() {
+        location.reload()
     }
+    //Add Movie To Cart
+    function addToCart(id) {
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("AddToCart", "Cart")",
+                data: {
+                    id: id
+                },
+                dataType: "json",
+                success: function (res) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: "Item has been added!",
+                        icon: 'success',
+                        allowOutsideClick: false,
+                        showCancelButton: true,
+                        cancelButtonText: "Continue",
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'View Cart'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.replace("/Cart/Index")
+                        } else {
+                            reloadPage();
+                        }
+                    })
+
+                }
+            })
+    }
+    </script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
+@* <script>
+        $(document).ready(function () {
+            $("#addbtn").click(function () {
+
+                Swal.fire(
+                    'Good job!',
+                    'You clicked the button!',
+                    'success'
+                )
+
+            });
+        });
+    </script>
+*@

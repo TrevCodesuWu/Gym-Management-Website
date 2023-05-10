@@ -15,7 +15,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        <a style="text-transform:none; text-decoration:none;" class="btn btn-info" href="/gymproducts/create">Create</a>
     </p>
     <table class="table table-bordered table-condensed">
         <tr>
@@ -52,6 +52,8 @@
         }
 
     </table>
+    <a style="text-transform:none; text-decoration:none;" class="btn btn-primary" href="/admin/admindashboard">Back to Dashboard</a>
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 </body>

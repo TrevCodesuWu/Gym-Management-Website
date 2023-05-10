@@ -54,8 +54,11 @@ namespace Gym_Management_Website.Controllers
                 Session["cart"] = cart;
 
             }
+            List<Item> cartv = (List<Item>)Session["cart"];
+            
 
-            return RedirectToAction("Index"); 
+            return Json(cartv, JsonRequestBehavior.AllowGet);
+
         }
 
         public int IsInCart(int id)
@@ -80,10 +83,13 @@ namespace Gym_Management_Website.Controllers
             cart.RemoveAt(indexI);
             Session["cart"] = cart;
 
-            return RedirectToAction("Index"); 
+            List<Item> cartv = (List<Item>)Session["cart"];
+
+            return Json(cartv, JsonRequestBehavior.AllowGet);
+
         }
 
-        [Authorize]
+         [Authorize]
         public ActionResult confirmCheckout(double totalAmount)
         {
             var memberfromdb = context.Members.Where(c => c.Email == User.Identity.Name).SingleOrDefault();
@@ -102,9 +108,9 @@ namespace Gym_Management_Website.Controllers
         public ActionResult numItemsCart() //This is for the counter of items the user puts in their cart , this is displayed at the home page.
         {
            
-            List<Item> cart = (List<Item>)Session["cart"];
-            var counter = 0;
-            foreach( var vari in cart)
+            List<Item> cart = (List<Item>)Session["cart"]; // gets all the items in the cart currently 
+            var counter = 0; // initializing a new variable 
+            foreach( var vari in cart)  // looping throughout the cart 
             {
                 var calc = vari.Quantity;
 
