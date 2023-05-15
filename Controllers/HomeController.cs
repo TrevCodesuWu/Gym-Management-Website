@@ -10,6 +10,10 @@ namespace Gym_Management_Website.Controllers
     {
         public ActionResult Index()
         {
+            if (User.IsInRole("AdminRole"))
+            {
+                return RedirectToAction("Admindashboard", "Admin");
+            }
             return View();
         }
 

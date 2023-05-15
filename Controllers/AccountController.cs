@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Gym_Management_Website.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Gym_Management_Website.Controllers
 {
@@ -168,6 +169,7 @@ namespace Gym_Management_Website.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    
                     Member member = new Member()
                     {
                         UserId = user.Id,
@@ -179,7 +181,7 @@ namespace Gym_Management_Website.Controllers
                     };
 
                     _context.Members.Add(member);
-                    _context.SaveChanges();
+                    _context.SaveChanges(); 
 
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     

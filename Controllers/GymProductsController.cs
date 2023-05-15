@@ -23,6 +23,7 @@ namespace Gym_Management_Website.Controllers
         }
         public ActionResult ReadOnlyIndex()
         {
+
             var list = db.gymProductsDatabase.ToList();
 
             List<Item> cart = (List<Item>)Session["cart"];
@@ -74,7 +75,7 @@ namespace Gym_Management_Website.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,prod_name,prod_price,prod_qty")] GymProducts gymProducts)
+        public ActionResult Create([Bind(Include = "id,prod_name,prod_price,prod_qty,profile_url")] GymProducts gymProducts)
         {
             if (ModelState.IsValid)
             {
@@ -106,7 +107,7 @@ namespace Gym_Management_Website.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,prod_name,prod_price,prod_qty")] GymProducts gymProducts)
+        public ActionResult Edit([Bind(Include = "id,prod_name,prod_price,prod_qty,profile_url")] GymProducts gymProducts)
         {
             if (ModelState.IsValid)
             {

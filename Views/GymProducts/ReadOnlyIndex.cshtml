@@ -1,10 +1,10 @@
 ﻿@model Gym_Management_Website.ViewModels.GymProductsListAndCartCountViewModel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "shoppping page";
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -23,7 +23,7 @@
     <div>
         @foreach (var item in Model.gymprodvm)
         {
-            <div class="form-group">
+            <div class="form-group col-4">
                 <div>@item.prod_name</div>
                 <div>@item.prod_price</div>
                 <button class="btn" onclick="addToCart(@item.id)">Add to cart</button>

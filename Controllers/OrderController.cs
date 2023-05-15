@@ -27,5 +27,19 @@ namespace Gym_Management_Website.Controllers
 
             return View(listorder);
         }
+        public ActionResult allOrders()
+        {
+
+            var listorder = context.Orderdb.ToList();
+
+            return View(listorder);
+        }
+        public ActionResult completeOrders()
+        {
+
+            var listorder = context.Orderdb.Where(ss => ss.deliverystatus == "Complete").ToList();
+
+            return View(listorder);
+        }
     }
 }

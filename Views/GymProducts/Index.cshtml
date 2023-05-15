@@ -1,19 +1,9 @@
 ﻿@model IEnumerable<Gym_Management_Website.Models.GymProducts>
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_AdminDashboard.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
     <p>
         <a style="text-transform:none; text-decoration:none;" class="btn btn-info" href="/gymproducts/create">Create</a>
     </p>
@@ -56,5 +46,3 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-</body>
-</html>

@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202305100747554_userEmail.Designer.cs">
       <DependentUpon>202305100747554_userEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305150638314_seedroles.cs" />
+    <Compile Include="Migrations\202305150638314_seedroles.Designer.cs">
+      <DependentUpon>202305150638314_seedroles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GymProducts.cs" />
@@ -289,7 +293,6 @@
     <Content Include="Views\GymProducts\Details.cshtml" />
     <Content Include="Views\GymProducts\Edit.cshtml" />
     <Content Include="Views\GymProducts\Index.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Cart\confirmCheckout.cshtml" />
     <Content Include="Views\GymProducts\ReadOnlyIndex.cshtml" />
@@ -301,6 +304,9 @@
     <Content Include="Views\Shared\_DriverDashboard.cshtml" />
     <Content Include="Views\Admin\DriverDashboard.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Order\allOrders.cshtml" />
+    <Content Include="Views\Order\completeOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305100747554_userEmail.resx">
       <DependentUpon>202305100747554_userEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305150638314_seedroles.resx">
+      <DependentUpon>202305150638314_seedroles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

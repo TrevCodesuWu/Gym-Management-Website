@@ -1,17 +1,10 @@
 ﻿@model Gym_Management_Website.Models.GymProducts
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_AdminDashboard.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -57,5 +50,3 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
-</body>
-</html>

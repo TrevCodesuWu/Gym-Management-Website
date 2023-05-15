@@ -71,7 +71,7 @@ namespace Gym_Management_Website.Controllers
                 userEmail = User.Identity.Name
                 
             };
-       // was trying to change it for testing//     orderdet.deliverystatus = Convert.ToString(status.Arriving);
+            // was trying to change it for testing//     orderdet.deliverystatus = Convert.ToString(status.Arriving);
             context.Orderdb.Add(orderdet);
             context.SaveChanges();
            

@@ -2,41 +2,54 @@
 @{
     ViewBag.Title = "confirmCheckout";
 }
+<style>
+    .headd{
+        font-family:Calibri;
+        font-size:20px; 
+    }
+    th {
+        font-family: Calibri;
+        font-size: 18px;
+    }
+</style>
+<h2>Checkout</h2>
 
-<h2>confirmCheckout</h2>
-
-<h2>total needed to be paid : </h2>
-
-<table class="table table-condensed">
+<table class="table table-borderless">
     <thead>
         <tr>
-            <th>Full Name</th>
+            <th class="headd">Full Name</th>
             <th>@Model.memberVm.FullName</th>
+            
         </tr>
         <tr>
-            <th>Email</th>
+            <th class="headd">Email</th>
             <th>@Model.memberVm.Email</th>
         </tr>
         <tr>
-            <th>Library Id</th>
+            <th class="headd">Library Id</th>
             <th>@Model.memberVm.LibraryId</th>
         </tr>
         <tr>
-            <th>Phone</th>
+            <th class="headd">Phone</th>
             <th>@Model.memberVm.PhoneNo</th>
         </tr>
         <tr>
-            <th>Address</th>
+            <th class="headd">Address</th>
             <th>@Model.memberVm.Address</th>
         </tr>
         <tr>
-            <th>Total</th>
-            <th>@Model.totalVm</th>
+            <th class="headd">Payment Method</th>
+            <th>PayFast</th>
+        </tr>
+        <tr>
+            <th class="headd">Total</th>
+            <th>R @Model.totalVm</th>
         </tr>
     </thead>
     <tbody>
     </tbody>
 </table>
+
 <form action="https://sandbox.payfast.co.za/eng/process" method="post">
     <input type="hidden" name="merchant_id" value="10029388" />
     <input type="hidden" name="merchant_key" value="bvuhhdzq7sjle" />
