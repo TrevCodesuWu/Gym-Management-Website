@@ -21,6 +21,8 @@ namespace Gym_Management_Website.Models
 
         [Required]
         public int prod_qty { get; set; }
+        public string prod_image { get; set; }
+
        
 
     }

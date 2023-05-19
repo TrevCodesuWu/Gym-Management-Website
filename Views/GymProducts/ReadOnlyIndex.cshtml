@@ -9,7 +9,6 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ReadOnlyIndexx</title>
-
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <script src="~/Scripts/jquery-3.4.1.js"></script>
@@ -17,20 +16,23 @@
 
 </head>
 <body>
-    <div>
+   
+  <!-- <div>
         @Model.countvm
-    </div>
+    </div> -->
+    <div style="font-size:25px; font-family:'Freestyle Script';">Jims Products</div>
     <div>
         @foreach (var item in Model.gymprodvm)
         {
-            <div class="form-group col-4">
-                <div>@item.prod_name</div>
-                <div>@item.prod_price</div>
-                <button class="btn" onclick="addToCart(@item.id)">Add to cart</button>
-
-            </div>
-
-
+        <div class="form-group col-4">
+            <div>@item.prod_name</div>
+            <div>R @item.prod_price</div>
+            <div style="width:350px; height:230px; overflow:hidden; background-color:white;"><img style=" height:100%;" src="@item.prod_image" alt="image not found"/></div>
+            <br />
+            
+            <button class="btn btn-success" onclick="addToCart(@item.id)">Add to cart</button>
+        </div>
+            <br />
             /*
             <div class="form-group">
                 <div>@item.prod_name</div>

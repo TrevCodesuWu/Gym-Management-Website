@@ -5,6 +5,11 @@
 }
 
 <h2>Your Cart</h2>
+@if ((List<Item>)Session["cart"] == null)
+{
+    <h2>Your cart is empty!</h2>
+            }
+            else { 
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -48,6 +53,7 @@
         </tr>
     </tbody>
 </table>
+}
 <div>
     @Html.ActionLink("Back to Store", "ReadOnlyIndex", "GymProducts")
 

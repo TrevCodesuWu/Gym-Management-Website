@@ -1,31 +1,37 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+    #image1 {
+        background: url('https://th.bing.com/th/id/R.5107b3e393f638caff3af7d72ff51756?rik=83tNi%2fVQOjFWXQ&pid=ImgRaw&r=0');
+    }
+    #image2 {
+        background: url('https://th.bing.com/th/id/OIP.EewpEFjqPMi13wPHeSJM6AHaEo?pid=ImgDet&rs=1');
+    }
+    #div1{
+        font-size:20px;
+        font-family:'Franklin Gothic';
+    }
+</style>
+<div class="jumbotron" id="image2">
+    <h1>Jims Gym</h1>
+    <p class="lead">
+        <div id="div1">The better fit</div><br />
+        So Much More<br />
+        For So Much Less!.
+    </p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
+<div class="row" id="image1">
+    <div class="col-md-6">
         <h2>Getting started</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Since opening our doors in 1995, our vision has been to become South Africa’s most loved health and fitness brand. Whether it’s bringing generators on board to ensure your workout is never disrupted or including free Wi-Fi – we aim to make every workout at Planet Fitness an awesome experience.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="col-md-6">
+        <h2>About Us</h2>
+        <p>We understand that South Africa’s needs are as diverse as its heritage, we strive to offer value for money to all our customers across our well-loved brands Planet Fitness, Planet Fitness Signature and JustGym.</p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+  
 </div>

@@ -75,7 +75,7 @@ namespace Gym_Management_Website.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,prod_name,prod_price,prod_qty,profile_url")] GymProducts gymProducts)
+        public ActionResult Create([Bind(Include = "id,prod_name,prod_price,prod_qty,prod_image")] GymProducts gymProducts)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace Gym_Management_Website.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,prod_name,prod_price,prod_qty,profile_url")] GymProducts gymProducts)
+        public ActionResult Edit([Bind(Include = "id,prod_name,prod_price,prod_qty,prod_image")] GymProducts gymProducts)
         {
             if (ModelState.IsValid)
             {

@@ -207,6 +207,10 @@
     <Compile Include="Migrations\202305150638314_seedroles.Designer.cs">
       <DependentUpon>202305150638314_seedroles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305190703570_imagefield.cs" />
+    <Compile Include="Migrations\202305190703570_imagefield.Designer.cs">
+      <DependentUpon>202305190703570_imagefield.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GymProducts.cs" />
@@ -345,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305150638314_seedroles.resx">
       <DependentUpon>202305150638314_seedroles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305190703570_imagefield.resx">
+      <DependentUpon>202305190703570_imagefield.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
