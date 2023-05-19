@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202305190703570_imagefield.Designer.cs">
       <DependentUpon>202305190703570_imagefield.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305190824423_seedingdbimages.cs" />
+    <Compile Include="Migrations\202305190824423_seedingdbimages.Designer.cs">
+      <DependentUpon>202305190824423_seedingdbimages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GymProducts.cs" />
@@ -352,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305190703570_imagefield.resx">
       <DependentUpon>202305190703570_imagefield.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305190824423_seedingdbimages.resx">
+      <DependentUpon>202305190824423_seedingdbimages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
