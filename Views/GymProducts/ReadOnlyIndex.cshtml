@@ -20,12 +20,12 @@
   <!-- <div>
         @Model.countvm
     </div> -->
-    <div style="font-size:25px; font-family:'Freestyle Script';">Jims Products</div>
+    <div style="font-size:25px; font-family:SimSun;">Jims Products</div>
     <div>
         @foreach (var item in Model.gymprodvm)
         {
         <div class="form-group col-4">
-            <div>@item.prod_name</div>
+            <div style="font-size:20px;">@item.prod_name</div>
             <div>R @item.prod_price</div>
             <div style="width:350px; height:230px; overflow:hidden; background-color:white;"><img style=" height:100%;" src="@item.prod_image" alt="image not found"/></div>
             <br />

@@ -1,0 +1,798 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .faq-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+        }
+
+            .faq-answer p {
+                margin: 0;
+            }
+
+
+
+        .hero-section {
+            align-items: flex-start;
+            background: #11131e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100%;
+            justify-content: center;
+            padding: var(--spacing-xxl) var(--spacing-l);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-column-gap: var(--spacing-l);
+            grid-row-gap: var(--spacing-l);
+            max-width: var(--width-container);
+            width: 100%;
+        }
+
+        .card-grid {
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .card-grid {
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        .card {
+            list-style: none;
+            position: relative;
+        }
+
+            .card:before {
+                content: '';
+                display: block;
+                padding-bottom: 150%;
+                width: 100%;
+            }
+
+        .card__background {
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--spacing-l);
+            bottom: 0;
+            filter: brightness(0.75) saturate(1.2) contrast(0.85);
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform-origin: center;
+            transform: scale(1) translateZ(0);
+            transition: filter 200ms linear, transform 200ms linear;
+        }
+
+        .card:hover .card__background {
+            transform: scale(1.05) translateZ(0);
+        }
+
+        .card-grid:hover > .card:not(:hover) .card__background {
+            filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+        }
+
+        .card__content {
+            left: 0;
+            padding: var(--spacing-l);
+            position: absolute;
+            top: 0;
+        }
+
+        .card__category {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-s);
+            text-transform: uppercase;
+        }
+
+        .card__heading {
+            color: var(--text-lighter);
+            font-size: 1.9rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+            line-height: 1.4;
+            word-spacing: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">What is Obesity?</div>
+            <div class="faq-answer">
+                <p>Obesity is a medical condition characterized by excessive accumulation of body fat to the extent that it may have a negative impact on a person's health.Obesity is generally caused by a combination of genetic, environmental, and behavioral factors. Excessive calorie intake, sedentary lifestyle, lack of physical activity, unhealthy eating habits, hormonal imbalances, certain medications, and genetic predisposition can contribute to the development of obesity.</p>
+
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How to prevent/deal with Obesity?</div>
+            <div class="faq-answer">
+                <p>
+                    Preventing obesity involves adopting a healthy lifestyle and making sustainable changes to promote weight management. Here are some key strategies to help prevent obesity:
+                    <br />
+                    <br />
+                    1. Balanced and Nutritious Diet: Focus on consuming a balanced diet that includes a variety of fruits, vegetables, whole grains, lean proteins, and healthy fats. Limit the intake of processed foods, sugary drinks, and high-fat foods. Pay attention to portion sizes and practice mindful eating.
+                    <br />
+                    <br />
+                    2. Regular Physical Activity: Engage in regular physical activity to burn calories and maintain a healthy weight. Aim for at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity per week, along with strength training exercises for muscle strengthening.
+                    <br />
+                    <br />
+                    3. Get Sufficient Sleep: Establish regular sleep patterns and aim for 7-9 hours of quality sleep each night. Inadequate sleep can disrupt hormones that regulate hunger and appetite, leading to weight gain.
+                    <br />
+                    <br />
+                    4. Manage Stress: Find healthy ways to manage stress, as it can contribute to emotional eating and unhealthy food choices. Engage in activities like exercise, meditation, yoga, or hobbies to reduce stress levels.
+                    <br />
+                    <br />
+                    5. Monitor Weight Regularly: Keep track of your weight and body measurements periodically to identify any changes or trends. Regular monitoring can help you take timely action and make necessary adjustments to your lifestyle..
+                </p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Possible diet options to follow:</div>
+            <div class="faq-answer">
+                <div class="faq-container">
+
+                    <div class="faq-item">
+                        <div class="faq-question"> Intermittent Fasting</div>
+                        <div class="faq-answer">
+                            <p>Intermittent fasting involves cycling between periods of eating and fasting. The most common approach is the 16/8 method, where individuals fast for 16 hours and limit their eating to an 8-hour window each day. Other variations include alternate-day fasting or fasting for a full day or two per week. Intermittent fasting may help with calorie restriction and weight loss, but it may not be suitable for everyone, particularly those with certain medical conditions..</p><br />
+                            <div class="faq-item">
+                                <div class="faq-question">Recipes</div>
+                                <div class="faq-answer">
+
+                                    <div class="faq-item">
+                                        <div class="faq-question">Lunch</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1:Quinoa Salad with Grilled Chicken and Vegetables</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:
+                                                        <br />
+                                                        -½ cup cooked quinoa<br />
+                                                        -4 ounces grilled chicken breast, sliced<br />
+                                                        -1 cup mixed salad greens<br />
+                                                        -½ cup cherry tomatoes, halved<br />
+                                                        -½ cucumber, sliced<br />
+                                                        -¼ red onion, thinly sliced<br />
+                                                        -2 tablespoons chopped fresh herbs (such as basil, parsley, or cilantro)<br />
+                                                        -Juice of 1 lemon<br />
+                                                        -1 tablespoon extra-virgin olive oil<br />
+                                                        -Salt and pepper to taste<br />
+                                                        <br />
+                                                        Instructions:
+                                                        <br />
+                                                        1.In a large bowl, combine the cooked quinoa, sliced grilled chicken, salad greens, cherry tomatoes, cucumber, red onion, and fresh herbs.
+                                                        <br />
+                                                        2.In a small bowl, whisk together the lemon juice, olive oil, salt, and pepper to make the dressing.
+                                                        <br />
+                                                        3.Drizzle the dressing over the salad ingredients and toss gently to combine.
+                                                        <br />
+                                                        4.Adjust the seasoning if needed and divide the salad into serving bowls.
+                                                        <br />
+                                                        5.Enjoy your quinoa salad with grilled chicken and vegetables as a satisfying and nutritious lunch option.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2:Mediterranean Chickpea Salad Wrap</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 1 cup canned chickpeas, rinsed and drained<br />
+                                                        - ½ cucumber, diced<br />
+                                                        - ½ red bell pepper, diced<br />
+                                                        - ¼ red onion, finely chopped<br />
+                                                        - ¼ cup Kalamata olives, pitted and sliced<br />
+                                                        - 2 tablespoons chopped fresh parsley<br />
+                                                        - Juice of 1 lemon<br />
+                                                        - 1 tablespoon extra-virgin olive oil<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 4 large lettuce leaves or whole-grain tortillas<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. In a large bowl, combine the chickpeas, cucumber, red bell pepper, red onion, Kalamata olives, and fresh parsley.<br />
+                                                        2. In a small bowl, whisk together the lemon juice, olive oil, salt, and pepper to make the dressing.<br />
+                                                        3. Pour the dressing over the chickpea mixture and toss to coat all the ingredients evenly.<br />
+                                                        4. If using lettuce leaves, place a spoonful of the chickpea salad onto each lettuce leaf and roll it up like a wrap. If using tortillas, spread the chickpea salad onto each tortilla and roll it up tightly.<br />
+                                                        5. Cut the wraps in half and serve.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question">Supper</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1: Baked Salmon with Roasted Vegetables</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 1 salmon fillet (4-6 ounces)<br />
+                                                        - 1 tablespoon olive oil<br />
+                                                        - 1 teaspoon lemon juice<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 1 cup mixed vegetables (such as broccoli, bell peppers, and carrots), chopped<br />
+                                                        - ½ tablespoon olive oil<br />
+                                                        - ¼ teaspoon dried herbs (such as thyme, rosemary, or oregano)<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. Preheat the oven to 400°F (200°C).<br />
+                                                        2. Place the salmon fillet on a baking sheet lined with parchment paper.<br />
+                                                        3. Drizzle the salmon with olive oil and lemon juice. Season with salt and pepper to taste.<br />
+                                                        4. In a separate bowl, toss the mixed vegetables with olive oil, dried herbs, salt, and pepper.<br />
+                                                        5. Spread the seasoned vegetables around the salmon fillet on the baking sheet.<br />
+                                                        6. Bake in the preheated oven for about 12-15 minutes, or until the salmon is cooked through and flakes easily with a fork.<br />
+                                                        7. Remove from the oven and let it rest for a few minutes before serving.<br />
+                                                        8. Serve the baked salmon with roasted vegetables as a nourishing and satisfying supper.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2: Grilled Chicken with Quinoa and Steamed Broccoli</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 4 ounces boneless, skinless chicken breast<br />
+                                                        - ½ cup cooked quinoa<br />
+                                                        - 1 cup steamed broccoli florets<br />
+                                                        - 1 tablespoon olive oil<br />
+                                                        - 1 teaspoon lemon juice<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - Optional: Herbs and spices of your choice for seasoning<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. Preheat the grill or grill pan to medium-high heat.<br />
+                                                        2. Season the chicken breast with salt, pepper, and any desired herbs or spices.<br />
+                                                        3. Grill the chicken for about 6-8 minutes per side, or until it reaches an internal temperature of 165°F (74°C) and is cooked through. Cooking times may vary depending on the thickness of the chicken breast.<br />
+                                                        4. While the chicken is grilling, prepare the quinoa according to the package instructions if not already cooked.<br />
+                                                        5. Steam the broccoli florets until tender but still crisp, about 5-7 minutes.<br />
+                                                        6. In a small bowl, whisk together the olive oil, lemon juice, salt, and pepper to make a simple dressing.<br />
+                                                        7. Slice the grilled chicken breast into thin strips.<br />
+                                                        8. In a serving plate, arrange the cooked quinoa, steamed broccoli, and sliced grilled chicken.<br />
+                                                        9. Drizzle the dressing over the ingredients or serve it on the side.<br />
+                                                        10. Enjoy the grilled chicken with quinoa and steamed broccoli as a satisfying and nutrient-rich supper option.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Paleo diet:</div>
+                        <div class="faq-answer">
+                            <p>The Paleo diet focuses on consuming foods that were available to our ancestors during the Paleolithic era. It emphasizes lean proteins, fruits, vegetables, nuts, and seeds while excluding grains, legumes, dairy, processed foods, and added sugars. While the Paleo diet may aid weight loss due to its focus on whole foods, it's important to ensure a balanced nutrient intake..</p><br />
+                            <div class="faq-item">
+                                <div class="faq-question">Recipes</div>
+                                <div class="faq-answer">
+                                    <div class="faq-item">
+                                        <div class="faq-question">Breakfast</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1:Paleo Vegetable Omelette</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 3 large eggs<br />
+                                                        - 1/4 cup diced bell peppers (any color)<br />
+                                                        - 1/4 cup diced onions<br />
+                                                        - 1/4 cup diced mushrooms<br />
+                                                        - 1/4 cup chopped spinach<br />
+                                                        - 1 tablespoon coconut oil or ghee<br />
+                                                        - Salt and pepper to taste<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. In a bowl, whisk the eggs until well beaten. Season with salt and pepper to taste.<br />
+                                                        2. Heat the coconut oil or ghee in a non-stick skillet over medium heat.<br />
+                                                        3. Add the diced bell peppers, onions, and mushrooms to the skillet. Sauté for 2-3 minutes until slightly softened.<br />
+                                                        4. Add the chopped spinach to the skillet and cook for an additional 1-2 minutes until wilted.<br />
+                                                        5. Pour the beaten eggs into the skillet, making sure they evenly cover the vegetables.<br />
+                                                        6. Cook the omelette for 2-3 minutes or until the edges start to set.<br />
+                                                        7. Gently lift the edges of the omelette with a spatula and tilt the skillet to let the uncooked eggs flow underneath.<br />
+                                                        8. Continue cooking for another 2-3 minutes or until the omelette is fully cooked but still slightly moist in the center.<br />
+                                                        9. Carefully fold the omelette in half using the spatula.<br />
+                                                        10. Transfer the omelette to a plate and serve hot.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2: Sweet Potato Hash with Eggs</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 2 medium sweet potatoes, peeled and diced into small cubes<br />
+                                                        - 1 red bell pepper, diced<br />
+                                                        - 1 small onion, diced<br />
+                                                        - 2 cloves of garlic, minced<br />
+                                                        - 2 tablespoons coconut oil or ghee<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 4 eggs<br />
+                                                        - Fresh parsley or cilantro for garnish (optional)<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. Heat coconut oil or ghee in a large skillet over medium heat.<br />
+                                                        2. Add the diced sweet potatoes to the skillet and cook for about 5 minutes, stirring occasionally, until they start to soften.<br />
+                                                        3. Add the diced bell pepper, onion, and minced garlic to the skillet. Continue cooking for another 5-7 minutes until the sweet potatoes are cooked through and slightly crispy, and the other vegetables are tender.<br />
+                                                        4. Season with salt and pepper to taste.<br />
+                                                        5. Create 4 wells in the sweet potato hash mixture and crack an egg into each well.<br />
+                                                        6. Cover the skillet and cook for about 5-7 minutes, or until the eggs are cooked to your desired level of doneness.<br />
+                                                        7. Remove from heat and garnish with fresh parsley or cilantro if desired.<br />
+                                                        8. Serve hot as a delicious and filling paleo breakfast.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question">Lunch</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1:Grilled Lemon Herb Chicken with Roasted Vegetables</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 2 boneless, skinless chicken breasts<br />
+                                                        - Juice of 1 lemon<br />
+                                                        - 2 tablespoons olive oil<br />
+                                                        - 2 cloves of garlic, minced<br />
+                                                        - 1 teaspoon dried rosemary<br />
+                                                        - 1 teaspoon dried thyme<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 2 cups mixed vegetables (such as broccoli florets, bell peppers, zucchini, and cherry tomatoes)<br />
+                                                        - 2 tablespoons coconut oil or ghee<br />
+                                                        - Fresh parsley for garnish (optional)<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. In a bowl, whisk together the lemon juice, olive oil, minced garlic, dried rosemary, dried thyme, salt, and pepper.<br />
+                                                        2. Place the chicken breasts in a shallow dish and pour the marinade over them, making sure they are evenly coated. Let the chicken marinate for at least 30 minutes, or up to overnight in the refrigerator.<br />
+                                                        3. Preheat your grill to medium-high heat.<br />
+                                                        4. Remove the chicken from the marinade and discard the excess marinade.<br />
+                                                        5. Grill the chicken breasts for about 6-8 minutes per side, or until cooked through and no longer pink in the center. The cooking time may vary depending on the thickness of the chicken breasts. Remove from the grill and let them rest for a few minutes.<br />
+                                                        6. While the chicken is resting, preheat your oven to 400°F (200°C).<br />
+                                                        7. In a baking sheet, toss the mixed vegetables with coconut oil or ghee, salt, and pepper.<br />
+                                                        8. Roast the vegetables in the preheated oven for about 15-20 minutes, or until they are tender and slightly caramelized.<br />
+                                                        9. Slice the grilled chicken breasts and serve them alongside the roasted vegetables.<br />
+                                                        10. Garnish with fresh parsley if desired.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2: Paleo Shrimp and Avocado Salad</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 1 pound shrimp, peeled and deveined<br />
+                                                        - 2 tablespoons olive oil<br />
+                                                        - 1 teaspoon paprika<br />
+                                                        - 1/2 teaspoon garlic powder<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 4 cups mixed salad greens<br />
+                                                        - 1 large avocado, diced<br />
+                                                        - 1 cup cherry tomatoes, halved<br />
+                                                        - 1/4 cup sliced red onions<br />
+                                                        - Juice of 1 lime<br />
+                                                        - Fresh cilantro for garnish (optional)<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. Preheat your grill or skillet over medium-high heat.<br />
+                                                        2. In a bowl, combine the shrimp, olive oil, paprika, garlic powder, salt, and pepper. Toss to coat the shrimp evenly.<br />
+                                                        3. Grill or sauté the shrimp for about 2-3 minutes per side until they are pink and cooked through.<br />
+                                                        4. Remove the shrimp from the heat and set aside.<br />
+                                                        5. In a large salad bowl, combine the mixed salad greens, diced avocado, cherry tomatoes, and sliced red onions.<br />
+                                                        6. Squeeze the lime juice over the salad ingredients and toss gently to combine.<br />
+                                                        7. Add the cooked shrimp to the salad and gently toss again.<br />
+                                                        8. Garnish with fresh cilantro if desired.<br />
+                                                        9. Serve immediately and enjoy your refreshing and nutritious paleo shrimp and avocado salad.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question">Supper</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">
+                                                    Option 1:Baked Salmon with Roasted Asparagus and Cauliflower Rice
+
+                                                </div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 2 salmon fillets (6-8 ounces each)<br />
+                                                        - 2 tablespoons olive oil<br />
+                                                        - Juice of 1 lemon<br />
+                                                        - 2 cloves of garlic, minced<br />
+                                                        - 1 teaspoon dried dill<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 1 bunch of asparagus, trimmed<br />
+                                                        - 1 head of cauliflower, riced (see instructions below)<br />
+                                                        - 2 tablespoons coconut oil or ghee<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - Fresh dill for garnish (optional)<br />
+                                                        <br />
+                                                        For the cauliflower rice:
+                                                        - 1 head of cauliflower<br />
+                                                        - 2 tablespoons olive oil<br />
+                                                        - Salt and pepper to taste<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. Preheat your oven to 400°F (200°C).<br />
+                                                        2. In a bowl, whisk together olive oil, lemon juice, minced garlic, dried dill, salt, and pepper.<br />
+                                                        3. Place the salmon fillets in a baking dish and pour the marinade over them, making sure they are evenly coated. Let the salmon marinate for about 15-20 minutes while you prepare the other ingredients.<br />
+                                                        4. Place the trimmed asparagus on a baking sheet and drizzle with olive oil. Season with salt and pepper.<br />
+                                                        5. Spread the asparagus out in a single layer and roast in the preheated oven for about 12-15 minutes until tender and slightly browned.
+                                                        6. While the asparagus is roasting, prepare the cauliflower rice. Cut the cauliflower into florets and place them in a food processor. Pulse until the cauliflower resembles rice-like grains.<br />
+                                                        7. Heat coconut oil or ghee in a large skillet over medium heat. Add the cauliflower rice and sauté for about 5-7 minutes until it's tender. Season with salt and pepper to taste.<br />
+                                                        8. Remove the salmon from the marinade and place it on a separate baking sheet lined with parchment paper. Bake in the preheated oven for about 12-15 minutes, or until the salmon is cooked through and flakes easily with a fork.<br />
+                                                        9. Remove the salmon and asparagus from the oven.<br />
+                                                        10. Serve the baked salmon alongside the roasted asparagus and cauliflower rice.<br />
+                                                        11. Garnish with fresh dill if desired.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2:Paleo Beef Stir-Fry with Vegetables</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 1 pound flank steak, thinly sliced<br />
+                                                        - 3 tablespoons coconut aminos (a paleo-friendly alternative to soy sauce)<br />
+                                                        - 2 tablespoons olive oil<br />
+                                                        - 2 cloves of garlic, minced<br />
+                                                        - 1 teaspoon grated fresh ginger<br />
+                                                        - 1 red bell pepper, thinly sliced<br />
+                                                        - 1 medium zucchini, thinly sliced<br />
+                                                        - 1 cup snap peas<br />
+                                                        - 1 cup sliced mushrooms<br />
+                                                        - 2 green onions, sliced<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - Sesame seeds for garnish (optional)<br />
+                                                        <br />
+                                                        Instructions:<br />
+                                                        1. In a bowl, combine the coconut aminos, minced garlic, and grated ginger. Stir well to make the marinade.<br />
+                                                        2. Place the sliced flank steak in a shallow dish and pour the marinade over it. Toss to ensure all the steak pieces are coated. Let it marinate for about 15-20 minutes.<br />
+                                                        3. Heat the olive oil in a large skillet or wok over medium-high heat.<br />
+                                                        4. Add the marinated beef to the skillet and cook for about 4-5 minutes until it's browned and cooked to your desired level of doneness. Remove the beef from the skillet and set it aside.<br />
+                                                        5. In the same skillet, add the sliced bell pepper, zucchini, snap peas, and mushrooms. Stir-fry for about 4-5 minutes until the vegetables are tender-crisp.<br />
+                                                        6. Return the cooked beef to the skillet with the vegetables and stir to combine.<br />
+                                                        7. Season with salt and pepper to taste.<br />
+                                                        8. Cook for an additional 1-2 minutes to ensure everything is heated through.<br />
+                                                        9. Remove from heat and garnish with sesame seeds if desired.<br />
+                                                        10. Serve the beef stir-fry with vegetables hot and enjoy!<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Portion Control</div>
+                        <div class="faq-answer">
+                            <p>Instead of following a specific diet, focusing on portion control can be an effective approach. This involves being mindful of portion sizes and consuming balanced meals that include appropriate amounts of carbohydrates, proteins, and fats. Using smaller plates, measuring food portions, and paying attention to hunger and fullness cues can help in managing calorie intake.</p><br />
+                            <div class="faq-item">
+                                <div class="faq-question">Recipes</div>
+                                <div class="faq-answer">
+                                    <div class="faq-item">
+                                        <div class="faq-question">Breakfast</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1: Vegetable Egg White Omelet:</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 4 egg whites<br />
+                                                        - 1/4 cup diced bell peppers (mixed colors)<br />
+                                                        - 1/4 cup diced onions<br />
+                                                        - 1/4 cup diced tomatoes<br />
+                                                        - 1/4 cup chopped spinach<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - Cooking spray or 1 teaspoon of olive oil (for greasing the pan)<br />
+                                                        <br />
+                                                        Instructions:<br />
+
+                                                        1. In a small bowl, whisk the egg whites until well beaten. Season with salt and pepper to taste.<br />
+                                                        2. Heat a non-stick skillet over medium heat and lightly coat it with cooking spray or olive oil.<br />
+                                                        3. Add the diced bell peppers and onions to the skillet and sauté for 2-3 minutes until they begin to soften.<br />
+                                                        4. Add the diced tomatoes and chopped spinach to the skillet and cook for an additional 1-2 minutes until the spinach wilts.<br />
+                                                        5. Remove the vegetable mixture from the skillet and set it aside.<br />
+                                                        6. Re-grease the skillet with cooking spray or a small amount of olive oil if needed.<br />
+                                                        7. Pour the beaten egg whites into the skillet and let them spread evenly.<br />
+                                                        8. Cook the egg whites for 1-2 minutes until the edges start to set.<br />
+                                                        9. Spoon the vegetable mixture evenly onto one half of the omelet.<br />
+                                                        10. Gently fold the other half of the omelet over the vegetables to form a semi-circle.<br />
+                                                        11. Cook the omelet for another 1-2 minutes until the egg whites are fully cooked.<br />
+                                                        12. Carefully transfer the omelet to a plate and serve hot.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2: Greek Yogurt Parfait:</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 1/2 cup plain Greek yogurt<br />
+                                                        - 1/4 cup mixed berries (such as blueberries, strawberries, raspberries)<br />
+                                                        - 2 tablespoons granola (choose a low-sugar or homemade option)<br />
+                                                        - 1 teaspoon honey (optional)<br />
+                                                        <br />
+                                                        Instructions:<br />
+
+                                                        1. In a glass or bowl, start by adding a layer of Greek yogurt at the bottom.<br />
+
+                                                        2. Top the yogurt with a layer of mixed berries.<br />
+
+                                                        3. Sprinkle a tablespoon of granola over the berries.<br />
+
+                                                        4. Repeat the layers of yogurt, berries, and granola.<br />
+
+                                                        5. Drizzle a teaspoon of honey over the top, if desired, for a touch of sweetness.<br />
+
+                                                        6. Serve immediately and enjoy!<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question">Lunch</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1:Grilled Chicken Salad:</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 4 ounces grilled chicken breast, sliced<br />
+                                                        - 2 cups mixed salad greens (such as lettuce, spinach, arugula)<br />
+                                                        - 1/4 cup cherry tomatoes, halved<br />
+                                                        - 1/4 cup cucumber, sliced<br />
+                                                        - 1/4 cup bell peppers, sliced<br />
+                                                        - 1/4 cup carrots, shredded<br />
+                                                        - 2 tablespoons balsamic vinaigrette (use a lighter or homemade version)<br />
+                                                        - Salt and pepper to taste<br />
+                                                        <br />
+                                                        Instructions:<br />
+
+                                                        1. In a large bowl, combine the mixed salad greens, cherry tomatoes, cucumber, bell peppers, and shredded carrots.<br />
+
+                                                        2. Season the salad with salt and pepper to taste.<br />
+
+                                                        3. Drizzle the balsamic vinaigrette over the salad and toss well to coat the ingredients evenly.<br />
+
+                                                        4. Transfer the salad to a plate or bowl.<br />
+
+                                                        5. Arrange the sliced grilled chicken breast on top of the salad.<br />
+
+                                                        6. Serve immediately and enjoy!<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2:Quinoa Stuffed Bell Peppers</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 2 medium bell peppers (any color)<br />
+                                                        - 1/2 cup cooked quinoa<br />
+                                                        - 1/4 cup black beans, rinsed and drained<br />
+                                                        - 1/4 cup corn kernels (fresh or frozen)<br />
+                                                        - 1/4 cup diced tomatoes<br />
+                                                        - 2 tablespoons diced red onion<br />
+                                                        - 2 tablespoons chopped fresh cilantro<br />
+                                                        - 1/2 teaspoon cumin<br />
+                                                        - 1/2 teaspoon chili powder<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - Optional toppings: Greek yogurt, avocado slices, salsa<br />
+                                                        <br />
+                                                        <br />
+                                                        Instructions:<br />
+
+                                                        1. Preheat the oven to 375°F (190°C).<br />
+
+                                                        2. Cut the tops off the bell peppers and remove the seeds and membranes. Rinse them under cold water.<br />
+
+                                                        3. In a mixing bowl, combine the cooked quinoa, black beans, corn kernels, diced tomatoes, red onion, cilantro, cumin, chili powder, salt, and pepper. Mix well to combine.<br />
+
+                                                        4. Stuff the quinoa mixture into the bell peppers, packing it tightly.<br />
+
+                                                        5. Place the stuffed bell peppers in a baking dish, standing upright.<br />
+
+                                                        6. Cover the dish with foil and bake for 25-30 minutes, or until the bell peppers are tender.<br />
+
+                                                        7. Remove the foil and bake for an additional 5 minutes to lightly brown the tops.<br />
+
+                                                        8. Remove from the oven and let them cool for a few minutes.<br />
+
+                                                        9. Serve the stuffed bell peppers with optional toppings such as Greek yogurt, avocado slices, or salsa.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <div class="faq-question">Supper</div>
+                                        <div class="faq-answer">
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 1:Baked Salmon with Roasted Vegetables:</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 4 ounces salmon fillet<br />
+                                                        - 1 cup mixed roasted vegetables (such as broccoli, cauliflower, zucchini, and carrots)<br />
+                                                        - 1 tablespoon olive oil<br />
+                                                        - 1/2 teaspoon garlic powder<br />
+                                                        - 1/2 teaspoon dried dill<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - Lemon wedges for serving<br />
+                                                        <br />
+                                                        Instructions:<br />
+
+                                                        1. Preheat the oven to 400°F (200°C).<br />
+
+                                                        2. Place the salmon fillet on a baking sheet lined with parchment paper or aluminum foil.<br />
+
+                                                        3. In a small bowl, combine the olive oil, garlic powder, dried dill, salt, and pepper. Mix well.<br />
+
+                                                        4. Brush the olive oil mixture over the salmon fillet, coating it evenly.<br />
+
+                                                        5. In a separate bowl, toss the mixed vegetables with a drizzle of olive oil, salt, and pepper.<br />
+
+                                                        6. Spread the vegetables on the same baking sheet around the salmon.<br />
+
+                                                        7. Bake in the preheated oven for 12-15 minutes, or until the salmon is cooked through and flakes easily with a fork.<br />
+
+                                                        8. Remove the baking sheet from the oven and let it cool for a few minutes.<br />
+
+                                                        9. Serve the baked salmon alongside the roasted vegetables.<br />
+
+                                                        10. Squeeze fresh lemon juice over the salmon and vegetables before eating.<br />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="faq-item">
+                                                <div class="faq-question">Option 2:Turkey and Quinoa Stuffed Bell Peppers:</div>
+                                                <div class="faq-answer">
+                                                    <p>
+                                                        Ingredients:<br />
+                                                        - 2 medium bell peppers (any color)<br />
+                                                        - 4 ounces ground turkey<br />
+                                                        - 1/4 cup cooked quinoa<br />
+                                                        - 1/4 cup diced tomatoes<br />
+                                                        - 2 tablespoons diced onion<br />
+                                                        - 2 tablespoons chopped fresh parsley<br />
+                                                        - 1/2 teaspoon dried oregano<br />
+                                                        - 1/2 teaspoon garlic powder<br />
+                                                        - Salt and pepper to taste<br />
+                                                        - 2 tablespoons shredded cheese (optional)<br />
+                                                        <br />
+                                                        Instructions:<br />
+
+                                                        1. Preheat the oven to 375°F (190°C).<br />
+
+                                                        2. Cut the tops off the bell peppers and remove the seeds and membranes. Rinse them under cold water.<br />
+
+                                                        3. In a skillet, cook the ground turkey over medium heat until browned. Drain any excess fat.<br />
+
+                                                        4. In a mixing bowl, combine the cooked ground turkey, cooked quinoa, diced tomatoes, diced onion, chopped parsley, dried oregano, garlic powder, salt, and pepper. Mix well.<br />
+
+                                                        5. Stuff the turkey and quinoa mixture into the bell peppers, packing it tightly.<br />
+
+                                                        6. Place the stuffed bell peppers in a baking dish, standing upright.<br />
+
+                                                        7. Cover the dish with foil and bake for 25-30 minutes, or until the bell peppers are tender.<br />
+
+                                                        8. If desired, remove the foil, sprinkle shredded cheese over the top of each stuffed pepper, and bake for an additional 5 minutes until the cheese is melted and bubbly.<br />
+
+                                                        9. Remove from the oven and let them cool for a few minutes.<br />
+
+                                                        10. Serve the stuffed bell peppers as a satisfying portion-controlled supper.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-section">
+        <div class="card-grid">
+            <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://th.bing.com/th/id/R.99158d5202e427ce5ecff8d9b69907a2?rik=RE9fMmgKpyYzzA&pid=ImgRaw&r=0)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Example Card Heading</h3>
+                </div>
+            </a>
+            <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://storefeederimages.blob.core.windows.net/elitesupplements/Products/78ff9b6c-e07a-4c29-a11e-a1667091bef0/Full/ubuqv30b0yh.jpg)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Example Card Heading</h3>
+                </div>
+            </a>
+            <a class="card" href="#">
+                <div class="card__background" style="background-image: url(https://th.bing.com/th/id/R.60116d20df1c78c5a1b59d38f9f27b84?rik=CzIsyHKwtNNPcA&riu=http%3a%2f%2fecx.images-amazon.com%2fimages%2fI%2f917iEZXqO2L._SL1500_.jpg&ehk=9To2953mFee9xt0YTpmyMMlRZRRDY2Niv2cUFpXtVzo%3d&risl=&pid=ImgRaw&r=0)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Example Card Heading</h3>
+                </div>
+            </a>
+            <a class="card" href="/gymproducts/readonlyindex">
+                <div class="card__background" style="background-image: url(https://i5.walmartimages.com/asr/3865d782-7b12-4fdb-8429-3330db0cf20b.7b95e4fcfe1c5db1602147e6bbd39ee6.jpeg)"></div>
+                <div class="card__content">
+                    <p class="card__category">Category</p>
+                    <h3 class="card__heading">Example Card Heading</h3>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+
+    <script>
+        // JavaScript to toggle the visibility of answers when questions are clicked
+        const questions = document.querySelectorAll('.faq-question');
+
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = (answer.style.display === 'none') ? 'block' : 'none';
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+

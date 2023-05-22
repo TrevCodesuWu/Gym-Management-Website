@@ -30,6 +30,12 @@ namespace Gym_Management_Website.Models
        
         public DbSet<Order> Orderdb { get; set; }
 
+        public DbSet<User> userDatabase { get; set; }
+        
+        public DbSet<Gender> genderDatabase { get; set; }
+        public DbSet<UserActivity> activityDatabase { get; set; } 
+
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

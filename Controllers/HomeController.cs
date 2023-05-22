@@ -30,5 +30,14 @@ namespace Gym_Management_Website.Controllers
 
             return View();
         }
+        public ActionResult CalculatorHome() //Calculator home page goes here in this view 
+        {
+
+            return View();
+        }
+        public ActionResult notFound()
+        {
+            return View();
+        }
     }
 }

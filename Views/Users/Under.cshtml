@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Under</title>
+</head>
+<body>
+    <div>
+        @Math.Round(ViewBag.bmiU, 3)
+    </div>
+    @Html.ActionLink("Go to Store", "readonlyindex", "gymproducts")
+
+</body>
+</html>

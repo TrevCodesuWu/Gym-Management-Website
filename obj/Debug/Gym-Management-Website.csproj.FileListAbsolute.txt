@@ -87,9 +87,12 @@ C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Manag
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.gymproducts.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.memberclass.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.userprofilefieldsadded.resources
-C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.AssemblyReference.cache
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.orderdb.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.userEmail.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.seedroles.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.imagefield.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.seedingdbimages.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.bmigenact.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.popgender.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.popActivity.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.AssemblyReference.cache
