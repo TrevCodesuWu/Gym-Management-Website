@@ -30,7 +30,8 @@ namespace Gym_Management_Website.Controllers
         public ActionResult UserCompletedOrders()
         {
             var listorder = context.Orderdb.Where(c => c.userEmail == User.Identity.Name).ToList();
-            var filteredlist = listorder.Where(ss => ss.deliverystatus == "Completed").ToList();
+
+            var filteredlist = listorder.Where(ss => ss.deliverystatus == "Complete").ToList();
 
             return View(filteredlist); 
         }
@@ -43,8 +44,7 @@ namespace Gym_Management_Website.Controllers
         }
         public ActionResult completeOrders()
         {
-
-            var listorder = context.Orderdb.Where(ss => ss.deliverystatus == "Completed").ToList();
+            var listorder = context.Orderdb.Where(ss => ss.deliverystatus == "Complete").ToList();
 
             return View(listorder);
         }

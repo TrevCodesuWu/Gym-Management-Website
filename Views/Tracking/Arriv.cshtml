@@ -61,7 +61,7 @@
                     </tbody>
                 </table>
                 <div style="margin-left:6px;">
-                    Delivery Update : Order has been picked up and is on the way 
+                    Delivery Update : Order has been picked up and is on the way
                 </div>
             </div>
             <div style="font-family: Dubai; width: 50%;background-color:silver;border: 1px solid grey;">
@@ -116,20 +116,21 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-                $('#maindiv').DataTable({                            //Remember to change the table name or it wont work //
-                    paging: false,
-                    "info": false,
-                    searching: false,
-                    dom: 'Bfrtip',
-                    buttons: [
-                        { extend: 'pdf', text: 'Print Order', className: 'btn btn-success' }
-                    ]
-                });
+            $('#maindiv').DataTable({                            //Remember to change the table name or it wont work //
+                paging: false,
+                "info": false,
+                searching: false,
+                dom: 'Bfrtip',
+                buttons: [
+                    { extend: 'pdf', text: 'Print Order', className: 'btn btn-success' }
+                ]
+            });
 
         });
     </script>
 
-
-
+    <br />
+    <br />
+    <a class="btn btn-primary" href="/Tracking/OrderCategory">Back to Orders</a>
 </body>
 </html>
