@@ -1,0 +1,37 @@
+﻿@model Gym_Management_Website.Models.Order
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Track</title>
+</head>
+<body>
+    <div> 
+        This is the tracking view 
+    </div>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Order Details</th>
+                <th>Amount</th>
+                <th>Date Purchased</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.userEmail</td>
+                <td>@Model.NameandQuant</td>
+                <td>@Model.total</td>
+                <td>@Model.timeOrder</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

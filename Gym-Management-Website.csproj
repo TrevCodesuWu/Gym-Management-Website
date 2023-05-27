@@ -176,6 +176,7 @@
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\TrackingController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -238,6 +239,7 @@
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Tracking.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,7 +258,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Arriving.png" />
     <Content Include="Content\Images\bizinsider.png" />
+    <Content Include="Content\Images\canImage.png" />
+    <Content Include="Content\Images\Delivered.png" />
+    <Content Include="Content\Images\pending1.png" />
     <Content Include="Content\Images\user-1.jpg" />
     <Content Include="Content\Structure.css" />
     <Content Include="favicon.ico" />
@@ -342,6 +348,14 @@
     <Content Include="Views\Users\Norm.cshtml" />
     <Content Include="Views\Users\Obes.cshtml" />
     <Content Include="Views\Home\notFound.cshtml" />
+    <Content Include="Views\Tracking\Track.cshtml" />
+    <Content Include="Views\Tracking\Index.cshtml" />
+    <Content Include="Views\Tracking\Pend.cshtml" />
+    <Content Include="Views\Tracking\Comp.cshtml" />
+    <Content Include="Views\Tracking\Arriv.cshtml" />
+    <Content Include="Views\Tracking\Cancel.cshtml" />
+    <Content Include="Views\Order\UserCompletedOrders.cshtml" />
+    <Content Include="Views\Tracking\OrderCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

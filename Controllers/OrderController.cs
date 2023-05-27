@@ -20,24 +20,31 @@ namespace Gym_Management_Website.Controllers
             context.Dispose();
         }
 
-        public ActionResult Index()
+        public ActionResult Index() // logged in users orders except for completed 
         {
            
             var listorder = context.Orderdb.Where(c => c.userEmail == User.Identity.Name).ToList();
+            var filtered = listorder.Where(cc => cc.deliverystatus == "Pending" || cc.deliverystatus == "Arriving" || cc.deliverystatus == "Cancelled").ToList();
+            return View(filtered);
+        }
+        public ActionResult UserCompletedOrders()
+        {
+            var listorder = context.Orderdb.Where(c => c.userEmail == User.Identity.Name).ToList();
+            var filteredlist = listorder.Where(ss => ss.deliverystatus == "Completed").ToList();
 
-            return View(listorder);
+            return View(filteredlist); 
         }
         public ActionResult allOrders()
         {
 
-            var listorder = context.Orderdb.ToList();
+            var listorder = context.Orderdb.Where(cc => cc.deliverystatus == "Pending" || cc.deliverystatus == "Arriving" || cc.deliverystatus == "Cancelled").ToList();
 
             return View(listorder);
         }
         public ActionResult completeOrders()
         {
 
-            var listorder = context.Orderdb.Where(ss => ss.deliverystatus == "Complete").ToList();
+            var listorder = context.Orderdb.Where(ss => ss.deliverystatus == "Completed").ToList();
 
             return View(listorder);
         }

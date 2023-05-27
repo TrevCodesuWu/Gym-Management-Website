@@ -1,0 +1,29 @@
+﻿@model Gym_Management_Website.Models.Tracking
+@{
+    ViewBag.Title = "Index";
+
+
+}
+
+<div class="container mt-4">
+    <h4 class="text-light">Track your order.</h4>
+    <p class="text-light">Please provide the order tracking number.</p>
+    @using (Html.BeginForm("Track", "Tracking", FormMethod.Post))
+    {
+        <p class="m-0 text-danger"></p>
+        <div class="row">
+            <div class="col-4">
+                <div class="form-group">
+                    <label class="text-light">Tracking Number</label>
+                    <input type="text" name="trackingnum" required class="form-control" placeholder="Enter your 10 digits tracking no." />
+                </div>
+                <div class="my-1">
+                    @Html.ValidationMessageFor(m => m.TrackingNumber, "", new { @class = "text-danger" }) 
+                </div>
+                <div class="form-group mt-3">
+                    <button class="btn btn-success w-100" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

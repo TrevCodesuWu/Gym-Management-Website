@@ -13,7 +13,9 @@
     background-color: transparent;
     z-index: 12;
 }
-
+.btnmoved{
+    position:absolute;top:0; right:0;
+}
 .readmore {
     position: absolute;
     top: 43%;
