@@ -169,6 +169,20 @@ namespace Gym_Management_Website.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    /*
+                    var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    await roleManager.CreateAsync(new IdentityRole("DriverRole")); 
+                    await UserManager.AddToRoleAsync(user.Id, "DriverRole");
+
+                    var driverr = new Driver
+                    {
+                        driver_email = model.Email,
+                        phone_num = model.PhoneNo
+                    };
+                    _context.driverdb.Add(driverr);
+                    _context.SaveChanges(); */
+
                     
                     Member member = new Member()
                     {
@@ -181,8 +195,8 @@ namespace Gym_Management_Website.Controllers
                     };
 
                     _context.Members.Add(member);
-                    _context.SaveChanges(); 
-
+                    _context.SaveChanges();  
+                    
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

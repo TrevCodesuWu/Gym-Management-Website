@@ -229,8 +229,25 @@
     <Compile Include="Migrations\202305201408352_popActivity.Designer.cs">
       <DependentUpon>202305201408352_popActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305280625208_driverdb.cs" />
+    <Compile Include="Migrations\202305280625208_driverdb.Designer.cs">
+      <DependentUpon>202305280625208_driverdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305280632243_foreignkeydriverid.cs" />
+    <Compile Include="Migrations\202305280632243_foreignkeydriverid.Designer.cs">
+      <DependentUpon>202305280632243_foreignkeydriverid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305280644086_popDriverRoles.cs" />
+    <Compile Include="Migrations\202305280644086_popDriverRoles.Designer.cs">
+      <DependentUpon>202305280644086_popDriverRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305292333250_DriverLogin.cs" />
+    <Compile Include="Migrations\202305292333250_DriverLogin.Designer.cs">
+      <DependentUpon>202305292333250_DriverLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Driver.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\GymProducts.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -247,6 +264,7 @@
     <Compile Include="ViewModels\BMIuserViewModel.cs" />
     <Compile Include="ViewModels\GymProductsListAndCartCountViewModel.cs" />
     <Compile Include="ViewModels\MemberAndTotalViewModel.cs" />
+    <Compile Include="ViewModels\OrderAndDriverlistvm.cs" />
     <Compile Include="ViewModels\UserGenderViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +374,11 @@
     <Content Include="Views\Tracking\Cancel.cshtml" />
     <Content Include="Views\Order\UserCompletedOrders.cshtml" />
     <Content Include="Views\Tracking\OrderCategory.cshtml" />
+    <Content Include="Views\Order\assign.cshtml" />
+    <Content Include="Views\Order\assignsave.cshtml" />
+    <Content Include="Views\Admin\OrderDrivers.cshtml" />
+    <Content Include="Views\Admin\CompletedDeliveries.cshtml" />
+    <Content Include="Views\Admin\Pickup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -409,6 +432,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305201408352_popActivity.resx">
       <DependentUpon>202305201408352_popActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305280625208_driverdb.resx">
+      <DependentUpon>202305280625208_driverdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305280632243_foreignkeydriverid.resx">
+      <DependentUpon>202305280632243_foreignkeydriverid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305280644086_popDriverRoles.resx">
+      <DependentUpon>202305280644086_popDriverRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305292333250_DriverLogin.resx">
+      <DependentUpon>202305292333250_DriverLogin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -21,6 +21,10 @@ namespace Gym_Management_Website.Models
         public string deliverystatus { get; set; } = Convert.ToString(status.Pending);
         [Required]
         public string tracking_num { get; set; }
+
+        public Driver driver { get; set; }
+        public int? DriverId { get; set; }
+
         public Order()
         {
             timeOrder = DateTime.Now; 

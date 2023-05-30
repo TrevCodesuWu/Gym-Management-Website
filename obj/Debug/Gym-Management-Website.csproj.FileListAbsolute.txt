@@ -96,3 +96,7 @@ C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Manag
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.popgender.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.popActivity.resources
 C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym-Management-Website.csproj.AssemblyReference.cache
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.driverdb.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.foreignkeydriverid.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.popDriverRoles.resources
+C:\Users\Trevlin Naicker\source\repos\Gym-Management-Website\obj\Debug\Gym_Management_Website.Migrations.DriverLogin.resources

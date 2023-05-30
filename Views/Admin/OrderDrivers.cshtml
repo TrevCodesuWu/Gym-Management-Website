@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Gym_Management_Website.Models.Order>
+@{
+    ViewBag.Title = "OrderDrivers";
+    Layout = "~/Views/Shared/_DriverDashboard.cshtml";
+}
+
+<h2>Pending Orders</h2>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Items</th>
+            <th>total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.userEmail</td>
+            <td>@item.NameandQuant</td>
+            <td>@item.total</td>
+            @if (item.deliverystatus == "Pending")
+            {
+                <td style="background-color:red;">@Html.ActionLink("Pick & Ship", "Pickup", "Admin", new { id = item.id }, null)</td>
+
+            }
+            else if (item.deliverystatus == "Arriving")
+            {
+                <td style="background-color:green;">@Html.ActionLink("Complete", "Complete", "Admin", new { id = item.id }, null)</td>
+            }
+            else if (item.deliverystatus == "Complete")
+            {
+                <td style="background-color:grey">Done</td>
+
+            }
+            else
+            {
+                <td>@Html.ActionLink("Cancelled", "", "", new { id = item.id }, null)</td>
+
+            }
+
+        </tr>
+        }
+    </tbody>
+</table>

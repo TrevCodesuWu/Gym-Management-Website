@@ -14,6 +14,10 @@ namespace Gym_Management_Website.Controllers
             {
                 return RedirectToAction("Admindashboard", "Admin");
             }
+            if (User.IsInRole("DriverRole"))
+            {
+                return RedirectToAction("DriverDashboard", "Admin");
+            }
             return View();
         }
 

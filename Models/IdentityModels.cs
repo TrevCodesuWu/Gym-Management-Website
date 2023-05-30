@@ -35,6 +35,8 @@ namespace Gym_Management_Website.Models
         public DbSet<Gender> genderDatabase { get; set; }
         public DbSet<UserActivity> activityDatabase { get; set; } 
 
+        public DbSet<Driver> driverdb { get; set; }
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

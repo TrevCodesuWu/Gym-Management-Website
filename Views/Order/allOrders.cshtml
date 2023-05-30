@@ -17,6 +17,7 @@
             <th>Total</th>
             <th>Tracking Number</th>
             <th>Order Status</th>
+            <th>Driver</th>
         </tr>
     </thead>
     <tbody>
@@ -49,7 +50,7 @@
                     <td style="color:black;">@item.deliverystatus</td>
 
                 }
-
+                <td>@Html.ActionLink("Assign Driver","assign","order",new {id=item.id },null)</td>
             </tr>
         }
     </tbody>
